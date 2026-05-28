@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>新手做饭助手 MVP 预览</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">MVP 静态预览</p>
+          <h1>新手做饭助手</h1>
+          <p>普通网页预览版，用来快速检查小程序 5 个核心页面的信息结构。</p>
+        </div>
+        <nav class="tabs" aria-label="页面预览">
+          <button class="tab is-active" data-view="list">菜品</button>
+          <button class="tab" data-view="detail">详情</button>
+          <button class="tab" data-view="shopping">买菜</button>
+          <button class="tab" data-view="prep">备菜</button>
+          <button class="tab" data-view="cooking">烹饪</button>
+        </nav>
+      </header>
+
+      <section id="view-list" class="view is-active" aria-labelledby="list-title">
+        <div class="section-heading">
+          <h2 id="list-title">菜品列表页</h2>
+          <input id="search" type="search" placeholder="搜索菜名，如 番茄炒蛋" />
+        </div>
+        <div id="recipe-list" class="recipe-list"></div>
+      </section>
+
+      <section id="view-detail" class="view" aria-labelledby="detail-title">
+        <h2 id="detail-title">菜品详情页</h2>
+        <div id="detail-content"></div>
+      </section>
+
+      <section id="view-shopping" class="view" aria-labelledby="shopping-title">
+        <div class="section-heading">
+          <h2 id="shopping-title">买菜清单页</h2>
+          <button id="copy-shopping" class="secondary">复制清单</button>
+        </div>
+        <div id="shopping-content"></div>
+      </section>
+
+      <section id="view-prep" class="view" aria-labelledby="prep-title">
+        <h2 id="prep-title">备菜步骤页</h2>
+        <div id="prep-content"></div>
+      </section>
+
+      <section id="view-cooking" class="view" aria-labelledby="cooking-title">
+        <h2 id="cooking-title">烹饪引导页</h2>
+        <div id="cooking-content"></div>
+      </section>
+    </main>
+
+    <script>
+      window.module = { exports: {} };
+      window.exports = window.module.exports;
+    </script>
+    <script src="../data/recipes.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
