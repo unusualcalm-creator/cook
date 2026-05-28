@@ -1,0 +1,53 @@
+<view wx:if="{{recipe}}" class="page detail-page">
+  <image class="detail-cover" src="{{recipe.coverImage}}" mode="aspectFill" />
+
+  <view class="detail-header">
+    <text class="detail-title">{{recipe.name}}</text>
+    <text class="muted">{{recipe.description}}</text>
+  </view>
+
+  <view class="stats card">
+    <view class="stat-item">
+      <text class="stat-value">{{recipe.timeMinutes}}分钟</text>
+      <text class="stat-label">总耗时</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{recipe.difficulty}}/5</text>
+      <text class="stat-label">难度</text>
+    </view>
+    <view class="stat-item">
+      <text class="stat-value">{{recipe.serving}}</text>
+      <text class="stat-label">份量</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">适合谁做</text>
+    <view class="card list-card">
+      <text wx:for="{{recipe.suitableUsers}}" wx:key="*this" class="list-line">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">成功关键点</text>
+    <view class="card list-card">
+      <text wx:for="{{recipe.coreTips}}" wx:key="*this" class="list-line">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">主要食材</text>
+    <view class="ingredient-grid">
+      <view wx:for="{{mainIngredients}}" wx:key="id" class="ingredient-chip card">
+        <text class="ingredient-name">{{item.name}}</text>
+        <text class="muted">{{item.amount}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-stack">
+    <button class="primary-button" bindtap="goShopping">查看买菜清单</button>
+    <button class="secondary-button" bindtap="goPrep">我已有食材，去备菜</button>
+    <button class="ghost-button" bindtap="goCooking">直接开始做菜</button>
+  </view>
+</view>

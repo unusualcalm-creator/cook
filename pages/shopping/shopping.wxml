@@ -1,0 +1,46 @@
+<view wx:if="{{recipe}}" class="page shopping-page">
+  <view class="page-heading">
+    <text class="title">买菜清单</text>
+    <text class="muted">{{recipe.name}} · 已勾选 {{purchasedCount}} / {{ingredients.length}}</text>
+  </view>
+
+  <view class="section">
+    <view
+      wx:for="{{ingredients}}"
+      wx:key="id"
+      class="shopping-item card {{item.purchased ? 'is-done' : ''}}"
+    >
+      <view class="item-main" data-id="{{item.id}}" bindtap="togglePurchased">
+        <checkbox class="item-checkbox" checked="{{item.purchased}}" />
+        <view class="item-content">
+          <view class="item-title-row">
+            <text class="item-name">{{item.name}}</text>
+            <text class="required-tag {{item.required ? 'required' : 'optional'}}">{{item.required ? '必需' : '可选'}}</text>
+          </view>
+          <text class="muted">{{item.amount}} · {{item.type}}</text>
+          <text class="item-desc">{{item.description}}</text>
+        </view>
+      </view>
+
+      <view class="tips-toggle" data-id="{{item.id}}" bindtap="toggleTips">
+        {{item.expanded ? '收起挑选方法' : '查看挑选方法和替代食材'}}
+      </view>
+
+      <view wx:if="{{item.expanded}}" class="tips-panel">
+        <text class="tips-title">推荐选择</text>
+        <text wx:for="{{item.selectionTips.preferred}}" wx:key="*this" class="tips-line">{{item}}</text>
+        <text class="tips-title">不建议选择</text>
+        <text wx:for="{{item.selectionTips.avoid}}" wx:key="*this" class="tips-line">{{item}}</text>
+        <text class="tips-title">新手口诀</text>
+        <text class="rule">{{item.selectionTips.simpleRule}}</text>
+        <text class="tips-title">可替代</text>
+        <text wx:for="{{item.substitutes}}" wx:key="*this" class="tips-line">{{item}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="action-stack">
+    <button class="secondary-button" bindtap="copyList">一键复制买菜清单</button>
+    <button class="primary-button" bindtap="goPrep">买好了，去备菜</button>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/shopping/shopping",
+    "pages/prep/prep",
+    "pages/cooking/cooking"
+  ],
+  "window": {
+    "navigationBarTitleText": "新手下厨",
+    "navigationBarBackgroundColor": "#dc2626",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f8fafc",
+    "backgroundTextStyle": "dark"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

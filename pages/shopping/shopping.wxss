@@ -1,0 +1,115 @@
+.page-heading {
+  margin-bottom: 10rpx;
+}
+
+.title {
+  display: block;
+  margin-bottom: 8rpx;
+  color: #111827;
+  font-size: 44rpx;
+  font-weight: 800;
+}
+
+.shopping-item {
+  overflow: hidden;
+  margin-bottom: 18rpx;
+}
+
+.shopping-item.is-done {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.item-main {
+  display: flex;
+  gap: 18rpx;
+  padding: 22rpx;
+}
+
+.item-checkbox {
+  flex: 0 0 auto;
+  margin-top: 6rpx;
+}
+
+.item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14rpx;
+}
+
+.item-name {
+  color: #111827;
+  font-size: 32rpx;
+  font-weight: 800;
+}
+
+.required-tag {
+  flex: 0 0 auto;
+  padding: 6rpx 12rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+}
+
+.required-tag.required {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+.required-tag.optional {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.item-desc {
+  display: block;
+  margin-top: 8rpx;
+  color: #374151;
+  font-size: 26rpx;
+}
+
+.tips-toggle {
+  padding: 18rpx 22rpx;
+  color: #166534;
+  border-top: 1rpx solid #d1fae5;
+  font-size: 26rpx;
+  font-weight: 700;
+}
+
+.tips-panel {
+  padding: 0 22rpx 22rpx;
+  border-top: 1rpx solid #d1fae5;
+}
+
+.tips-title {
+  display: block;
+  margin-top: 20rpx;
+  color: #111827;
+  font-size: 26rpx;
+  font-weight: 800;
+}
+
+.tips-line,
+.rule {
+  display: block;
+  margin-top: 10rpx;
+  color: #4b5563;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+
+.rule {
+  color: #166534;
+  font-weight: 700;
+}
+
+.action-stack {
+  display: grid;
+  gap: 18rpx;
+  margin-top: 28rpx;
+}

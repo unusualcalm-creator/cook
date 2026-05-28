@@ -1,0 +1,62 @@
+<view wx:if="{{recipe && currentStep}}" class="page cooking-page">
+  <view class="topbar">
+    <view>
+      <text class="title">烹饪引导</text>
+      <text class="muted">{{recipe.name}}</text>
+    </view>
+    <button class="reset-button" bindtap="resetProgress">重来</button>
+  </view>
+
+  <view class="progress-card card">
+    <text class="progress-text">第 {{currentIndex + 1}} / {{steps.length}} 步</text>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{(currentIndex + 1) * 100 / steps.length}}%;"></view>
+    </view>
+  </view>
+
+  <view class="step-card card">
+    <text class="step-title">{{currentStep.title}}</text>
+    <view class="focus-block">
+      <text class="focus-label">现在做什么</text>
+      <text class="focus-text">{{currentStep.action}}</text>
+    </view>
+
+    <view class="spec-grid">
+      <view class="spec-item">
+        <text class="spec-label">火候</text>
+        <text class="spec-value">{{currentStep.heatLevel}}</text>
+      </view>
+      <view class="spec-item">
+        <text class="spec-label">时间</text>
+        <text class="spec-value">{{currentStep.estimatedTime}}</text>
+      </view>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">看到这些状态再继续</text>
+      <text wx:for="{{currentStep.stateJudgements}}" wx:key="*this" class="check-line">{{item}}</text>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">下一步条件</text>
+      <text class="body-text">{{currentStep.nextStepCondition}}</text>
+    </view>
+
+    <view class="subsection">
+      <text class="subsection-title">新手提醒</text>
+      <text wx:for="{{currentStep.beginnerTips}}" wx:key="*this" class="tip-line">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="help-card card">
+    <text class="subsection-title">本步骤常见错误</text>
+    <text wx:for="{{currentStep.mistakes}}" wx:key="*this" class="help-line">{{item}}</text>
+    <text class="subsection-title rescue-title">可执行补救</text>
+    <text wx:for="{{currentStep.rescues}}" wx:key="*this" class="help-line">{{item}}</text>
+  </view>
+
+  <view class="nav-row">
+    <button class="secondary-button nav-button" disabled="{{currentIndex === 0}}" bindtap="prevStep">上一步</button>
+    <button class="primary-button nav-button" bindtap="nextStep">{{currentIndex === steps.length - 1 ? '完成' : '下一步'}}</button>
+  </view>
+</view>

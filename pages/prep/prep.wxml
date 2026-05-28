@@ -1,0 +1,50 @@
+<view wx:if="{{recipe}}" class="page prep-page">
+  <view class="page-heading">
+    <text class="title">备菜步骤</text>
+    <text class="muted">按顺序准备，开火后就不用边炒边找东西。</text>
+  </view>
+
+  <view class="tools card">
+    <text class="block-title">需要工具</text>
+    <view class="pill-row">
+      <text wx:for="{{recipe.tools}}" wx:key="*this" class="pill">{{item}}</text>
+    </view>
+  </view>
+
+  <view class="progress-card card">
+    <text class="progress-text">已完成 {{doneCount}} / {{prepSteps.length}}</text>
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{prepSteps.length ? doneCount * 100 / prepSteps.length : 0}}%;"></view>
+    </view>
+  </view>
+
+  <view class="section">
+    <view
+      wx:for="{{prepSteps}}"
+      wx:key="id"
+      class="prep-step card {{item.done ? 'is-done' : ''}}"
+      data-id="{{item.id}}"
+      bindtap="toggleDone"
+    >
+      <view class="step-index">{{index + 1}}</view>
+      <view class="step-body">
+        <view class="step-title-row">
+          <text class="step-title">{{item.title}}</text>
+          <checkbox checked="{{item.done}}" />
+        </view>
+        <text class="step-action">{{item.action}}</text>
+        <view class="info-block">
+          <text class="info-label">为什么这样排</text>
+          <text class="info-text">{{item.reason}}</text>
+        </view>
+        <view class="info-block">
+          <text class="info-label">完成判断</text>
+          <text class="info-text">{{item.completionState}}</text>
+        </view>
+        <text class="muted">预计 {{item.estimatedMinutes}} 分钟</text>
+      </view>
+    </view>
+  </view>
+
+  <button class="primary-button start-button" bindtap="startCooking">开始烹饪引导</button>
+</view>

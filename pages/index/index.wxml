@@ -1,0 +1,57 @@
+<view class="page index-page">
+  <view class="hero">
+    <text class="eyebrow">MVP 1.0</text>
+    <text class="hero-title">新手做饭助手</text>
+    <text class="hero-copy">按买菜、备菜、下锅的真实流程，把一道菜做清楚。</text>
+  </view>
+
+  <view class="search-row">
+    <input class="search-input" value="{{keyword}}" bindinput="onSearchInput" placeholder="搜索菜名，如 番茄炒蛋" confirm-type="search" />
+  </view>
+
+  <scroll-view class="category-scroll" scroll-x="true">
+    <view class="category-row">
+      <button
+        wx:for="{{categories}}"
+        wx:key="*this"
+        class="category-chip {{activeCategory === item ? 'is-active' : ''}}"
+        data-category="{{item}}"
+        bindtap="switchCategory"
+      >
+        {{item}}
+      </button>
+    </view>
+  </scroll-view>
+
+  <view class="section">
+    <text class="section-title">新手推荐</text>
+
+    <view wx:if="{{recipes.length === 0}}" class="card empty">
+      没有找到匹配菜品
+    </view>
+
+    <view
+      wx:for="{{recipes}}"
+      wx:key="id"
+      class="recipe-card card"
+      data-id="{{item.id}}"
+      bindtap="goDetail"
+    >
+      <image class="recipe-cover" src="{{item.coverImage}}" mode="aspectFill" />
+      <view class="recipe-content">
+        <view class="recipe-heading">
+          <text class="recipe-name">{{item.name}}</text>
+          <text class="difficulty">难度 {{item.difficulty}}/5</text>
+        </view>
+        <text class="muted">{{item.description}}</text>
+        <view class="meta-row">
+          <text>{{item.timeMinutes}} 分钟</text>
+          <text>{{item.serving}}</text>
+        </view>
+        <view class="pill-row">
+          <text wx:for="{{item.tags}}" wx:key="*this" class="pill">{{item}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

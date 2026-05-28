@@ -1,0 +1,15 @@
+{
+  "description": "新手做饭助手微信小程序 MVP",
+  "miniprogramRoot": "./",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "cook-helper-mvp",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": false
+  },
+  "condition": {}
+}

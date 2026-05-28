@@ -1,0 +1,166 @@
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.title {
+  display: block;
+  margin-bottom: 8rpx;
+  color: #111827;
+  font-size: 44rpx;
+  font-weight: 800;
+}
+
+.reset-button {
+  flex: 0 0 auto;
+  height: 64rpx;
+  padding: 0 20rpx;
+  color: #166534;
+  border: 1rpx solid #86efac;
+  background: #ffffff;
+  font-size: 24rpx;
+  line-height: 64rpx;
+}
+
+.progress-card {
+  margin-top: 22rpx;
+  padding: 20rpx 22rpx;
+}
+
+.progress-text {
+  color: #166534;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.progress-bar {
+  overflow: hidden;
+  height: 14rpx;
+  margin-top: 14rpx;
+  border-radius: 999rpx;
+  background: #dcfce7;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: #16a34a;
+}
+
+.step-card {
+  margin-top: 22rpx;
+  padding: 26rpx;
+}
+
+.step-title {
+  display: block;
+  color: #111827;
+  font-size: 42rpx;
+  font-weight: 900;
+}
+
+.focus-block {
+  margin-top: 22rpx;
+  padding: 24rpx;
+  border-radius: 8rpx;
+  color: #ffffff;
+  background: #b91c1c;
+}
+
+.focus-label {
+  display: block;
+  color: #fecaca;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.focus-text {
+  display: block;
+  margin-top: 8rpx;
+  font-size: 32rpx;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  margin-top: 20rpx;
+}
+
+.spec-item {
+  padding: 18rpx;
+  border-radius: 8rpx;
+  background: #f0fdf4;
+}
+
+.spec-label {
+  display: block;
+  color: #166534;
+  font-size: 24rpx;
+  font-weight: 800;
+}
+
+.spec-value {
+  display: block;
+  margin-top: 6rpx;
+  color: #111827;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.subsection {
+  margin-top: 24rpx;
+}
+
+.subsection-title {
+  display: block;
+  margin-bottom: 12rpx;
+  color: #111827;
+  font-size: 28rpx;
+  font-weight: 800;
+}
+
+.check-line,
+.tip-line,
+.help-line,
+.body-text {
+  display: block;
+  margin-top: 10rpx;
+  color: #374151;
+  font-size: 28rpx;
+  line-height: 1.55;
+}
+
+.check-line::before,
+.tip-line::before,
+.help-line::before {
+  content: "· ";
+  color: #dc2626;
+  font-weight: 900;
+}
+
+.help-card {
+  margin-top: 22rpx;
+  padding: 24rpx;
+}
+
+.rescue-title {
+  margin-top: 22rpx;
+}
+
+.nav-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+  margin-top: 28rpx;
+}
+
+.nav-button[disabled] {
+  color: #9ca3af;
+  border-color: #e5e7eb;
+  background: #f3f4f6;
+}

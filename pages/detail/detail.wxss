@@ -1,0 +1,85 @@
+.detail-cover {
+  display: block;
+  width: 100%;
+  height: 360rpx;
+  border-radius: 8rpx;
+  background: #fef2f2;
+}
+
+.detail-header {
+  margin-top: 24rpx;
+}
+
+.detail-title {
+  display: block;
+  margin-bottom: 12rpx;
+  color: #111827;
+  font-size: 48rpx;
+  font-weight: 800;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 24rpx;
+  padding: 22rpx 10rpx;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  color: #dc2626;
+  font-size: 30rpx;
+  font-weight: 800;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 8rpx;
+  color: #6b7280;
+  font-size: 24rpx;
+}
+
+.list-card {
+  padding: 8rpx 24rpx;
+}
+
+.list-line {
+  display: block;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #f3f4f6;
+  font-size: 28rpx;
+  line-height: 1.45;
+}
+
+.list-line:last-child {
+  border-bottom: 0;
+}
+
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16rpx;
+}
+
+.ingredient-chip {
+  min-height: 116rpx;
+  padding: 20rpx;
+}
+
+.ingredient-name {
+  display: block;
+  margin-bottom: 8rpx;
+  color: #111827;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.action-stack {
+  display: grid;
+  gap: 18rpx;
+  margin-top: 36rpx;
+}
